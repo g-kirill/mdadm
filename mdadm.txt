@@ -1,0 +1,484 @@
+Script started on 2024-07-30 08:20:15+00:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="128" LINES="42"]
+]0;root@ubuntu: /root@ubuntu:/# sudo lshw -short | grep disk
+
+
+DMI
+   
+SMP
+   
+PA-RISC
+       
+device-tree
+           
+SPD
+   
+memory
+      
+/proc/cpuinfo
+             
+CPUID
+     
+PCI (sysfs)
+           
+ISA PnP
+       
+PnP (sysfs)
+           
+PCMCIA
+      
+PCMCIA
+      
+Virtual I/O (VIRTIO) devices
+                            
+IBM Virtual I/O (VIO)
+                     
+kernel device tree (sysfs)
+                          
+USB
+   
+IDE
+   
+SCSI
+    
+NVMe
+    
+S/390 devices
+             
+Network interfaces
+                  
+Framebuffer devices
+                   
+Display
+       
+CPUFreq
+       
+ABI
+   
+
+/0/9/0.0.0    /dev/cdrom  [01;31m[Kdisk[m[K       VMware SATA CD00
+/0/a/0.0.0    /dev/sda    [01;31m[Kdisk[m[K       32GB Virtual [01;31m[Kdisk[m[K
+/0/a/0.1.0    /dev/sdb    [01;31m[Kdisk[m[K       17GB Virtual [01;31m[Kdisk[m[K
+/0/a/0.2.0    /dev/sdc    [01;31m[Kdisk[m[K       17GB Virtual [01;31m[Kdisk[m[K
+/0/a/0.3.0    /dev/sdd    [01;31m[Kdisk[m[K       17GB Virtual [01;31m[Kdisk[m[K
+/0/a/0.4.0    /dev/sde    [01;31m[Kdisk[m[K       17GB Virtual [01;31m[Kdisk[m[K
+/0/a/0.5.0    /dev/sdf    [01;31m[Kdisk[m[K       17GB Virtual [01;31m[Kdisk[m[K
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# sudo fdisk -l
+[1mDisk /dev/loop0: 70.32 MiB, 73728000 bytes, 144000 sectors
+[0mUnits: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+[1mDisk /dev/loop1: 32.3 MiB, 33865728 bytes, 66144 sectors
+[0mUnits: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+[1mDisk /dev/loop2: 55.45 MiB, 58130432 bytes, 113536 sectors
+[0mUnits: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+
+
+[1mDisk /dev/sda: 30 GiB, 32212254720 bytes, 62914560 sectors
+[0mDisk model: Virtual disk    
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: D13FE302-1BBC-4E5D-9F1F-1FFB0241B532
+
+[1mDevice[0m     [1mStart[0m [1m     End[0m [1m Sectors[0m [1mSize[0m [1mType[0m
+/dev/sda1   2048     4095     2048   1M BIOS boot
+/dev/sda2   4096 62912511 62908416  30G Linux filesystem
+
+
+[1mDisk /dev/sdc: 16 GiB, 17179869184 bytes, 33554432 sectors
+[0mDisk model: Virtual disk    
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+[1mDisk /dev/sdb: 16 GiB, 17179869184 bytes, 33554432 sectors
+[0mDisk model: Virtual disk    
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+[1mDisk /dev/sdf: 16 GiB, 17179869184 bytes, 33554432 sectors
+[0mDisk model: Virtual disk    
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+[1mDisk /dev/sde: 16 GiB, 17179869184 bytes, 33554432 sectors
+[0mDisk model: Virtual disk    
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+[1mDisk /dev/sdd: 16 GiB, 17179869184 bytes, 33554432 sectors
+[0mDisk model: Virtual disk    
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+]0;root@ubuntu: /root@ubuntu:/# mdadm --zero-superblock --force /dev/sd{b,c,d,e,f}
+[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# mdadm --zero-superblock --force /dev/sd{b,c,d,e,f}
+mdadm: Unrecognised md component device - /dev/sdb
+mdadm: Unrecognised md component device - /dev/sdc
+mdadm: Unrecognised md component device - /dev/sdd
+mdadm: Unrecognised md component device - /dev/sde
+mdadm: Unrecognised md component device - /dev/sdf
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# mdadm --create --verbose /dev/md0 -l 6 -n 5 /dev/sd{b,c,d,e,f}
+mdadm: layout defaults to left-symmetric
+mdadm: layout defaults to left-symmetric
+mdadm: chunk size defaults to 512K
+mdadm: size set to 16759808K
+mdadm: Defaulting to version 1.2 metadata
+mdadm: array /dev/md0 started.
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# cat /proc/mdstat
+Personalities : [linear] [multipath] [raid0] [raid1] [raid6] [raid5] [raid4] [raid10] 
+md0 : active raid6 sdf[4] sde[3] sdd[2] sdc[1] sdb[0]
+      50279424 blocks super 1.2 level 6, 512k chunk, algorithm 2 [5/5] [UUUUU]
+      [=======>.............]  resync = 36.6% (6146204/16759808) finish=0.9min speed=187563K/sec
+      
+unused devices: <none>
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# mdadm -D /dev/md0
+/dev/md0:
+           Version : 1.2
+     Creation Time : Tue Jul 30 08:22:03 2024
+        Raid Level : raid6
+        Array Size : 50279424 (47.95 GiB 51.49 GB)
+     Used Dev Size : 16759808 (15.98 GiB 17.16 GB)
+      Raid Devices : 5
+     Total Devices : 5
+       Persistence : Superblock is persistent
+
+       Update Time : Tue Jul 30 08:23:10 2024
+             State : clean, resyncing 
+    Active Devices : 5
+   Working Devices : 5
+    Failed Devices : 0
+     Spare Devices : 0
+
+            Layout : left-symmetric
+        Chunk Size : 512K
+
+Consistency Policy : resync
+
+     Resync Status : 79% complete
+
+              Name : ubuntu:0  (local to host ubuntu)
+              UUID : 5a6a37de:83186ac6:579cf97b:3fd15430
+            Events : 12
+
+    Number   Major   Minor   RaidDevice State
+       0       8       16        0      active sync   /dev/sdb
+       1       8       32        1      active sync   /dev/sdc
+       2       8       48        2      active sync   /dev/sdd
+       3       8       64        3      active sync   /dev/sde
+       4       8       80        4      active sync   /dev/sdf
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# mdadm --detail --scan --verbose
+ARRAY /dev/md0 level=raid6 num-devices=5 metadata=1.2 name=ubuntu:0 UUID=5a6a37de:83186ac6:579cf97b:3fd15430
+   devices=/dev/sdb,/dev/sdc,/dev/sdd,/dev/sde,/dev/sdf
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# echo "DEVICE partitions" > /etc/mdadm/mdadm.conf
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# mdadm --detail --scan --verbose | awk '/ARRAY/ {print}' >>
+bash: syntax error near unexpected token `newline'
+]0;root@ubuntu: /root@ubuntu:/# /etc/mdadm/mdadm.conf
+bash: /etc/mdadm/mdadm.conf: Permission denied
+]0;root@ubuntu: /root@ubuntu:/# /etc/mdadm/mdadm.conf
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmdadm --detail --scan --verbose | awk '/ARRAY/ {print}' >> /etc/mdadm/mdadm.conf 
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# mdadm /dev/md0 --fail /dev/sde
+mdadm: set /dev/sde faulty in /dev/md0
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# cat /proc/mdstat
+Personalities : [linear] [multipath] [raid0] [raid1] [raid6] [raid5] [raid4] [raid10] 
+md0 : active raid6 sdf[4] sde[3](F) sdd[2] sdc[1] sdb[0]
+      50279424 blocks super 1.2 level 6, 512k chunk, algorithm 2 [5/4] [UUU_U]
+      
+unused devices: <none>
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# mdadm -D /dev/md0
+/dev/md0:
+           Version : 1.2
+     Creation Time : Tue Jul 30 08:22:03 2024
+        Raid Level : raid6
+        Array Size : 50279424 (47.95 GiB 51.49 GB)
+     Used Dev Size : 16759808 (15.98 GiB 17.16 GB)
+      Raid Devices : 5
+     Total Devices : 5
+       Persistence : Superblock is persistent
+
+       Update Time : Tue Jul 30 08:26:17 2024
+             State : clean, degraded 
+    Active Devices : 4
+   Working Devices : 4
+    Failed Devices : 1
+     Spare Devices : 0
+
+            Layout : left-symmetric
+        Chunk Size : 512K
+
+Consistency Policy : resync
+
+              Name : ubuntu:0  (local to host ubuntu)
+              UUID : 5a6a37de:83186ac6:579cf97b:3fd15430
+            Events : 19
+
+    Number   Major   Minor   RaidDevice State
+       0       8       16        0      active sync   /dev/sdb
+       1       8       32        1      active sync   /dev/sdc
+       2       8       48        2      active sync   /dev/sdd
+       -       0        0        3      removed
+       4       8       80        4      active sync   /dev/sdf
+
+       3       8       64        -      faulty   /dev/sde
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# mdadm -D /dev/md0
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kmdadm /dev/md0 --remove /dev/sde
+mdadm: hot removed /dev/sde from /dev/md0
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# mdadm /dev/md0 --add /dev/sde
+mdadm: added /dev/sde
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# cat /proc/mdstat
+Personalities : [linear] [multipath] [raid0] [raid1] [raid6] [raid5] [raid4] [raid10] 
+md0 : active raid6 sde[5] sdf[4] sdd[2] sdc[1] sdb[0]
+      50279424 blocks super 1.2 level 6, 512k chunk, algorithm 2 [5/4] [UUU_U]
+      [====>................]  recovery = 23.6% (3966940/16759808) finish=1.0min speed=208786K/sec
+      
+unused devices: <none>
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# cat /proc/mdstat
+Personalities : [linear] [multipath] [raid0] [raid1] [raid6] [raid5] [raid4] [raid10] 
+md0 : active raid6 sde[5] sdf[4] sdd[2] sdc[1] sdb[0]
+      50279424 blocks super 1.2 level 6, 512k chunk, algorithm 2 [5/4] [UUU_U]
+      [======>..............]  recovery = 30.7% (5161432/16759808) finish=0.9min speed=206457K/sec
+      
+unused devices: <none>
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# cat /proc/mdstat
+Personalities : [linear] [multipath] [raid0] [raid1] [raid6] [raid5] [raid4] [raid10] 
+md0 : active raid6 sde[5] sdf[4] sdd[2] sdc[1] sdb[0]
+      50279424 blocks super 1.2 level 6, 512k chunk, algorithm 2 [5/4] [UUU_U]
+      [========>............]  recovery = 41.9% (7028224/16759808) finish=0.8min speed=201620K/sec
+      
+unused devices: <none>
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# cat /proc/mdstat
+Personalities : [linear] [multipath] [raid0] [raid1] [raid6] [raid5] [raid4] [raid10] 
+md0 : active raid6 sde[5] sdf[4] sdd[2] sdc[1] sdb[0]
+      50279424 blocks super 1.2 level 6, 512k chunk, algorithm 2 [5/4] [UUU_U]
+      [=============>.......]  recovery = 69.8% (11700688/16759808) finish=0.4min speed=202284K/sec
+      
+unused devices: <none>
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# cat /proc/mdstat
+Personalities : [linear] [multipath] [raid0] [raid1] [raid6] [raid5] [raid4] [raid10] 
+md0 : active raid6 sde[5] sdf[4] sdd[2] sdc[1] sdb[0]
+      50279424 blocks super 1.2 level 6, 512k chunk, algorithm 2 [5/5] [UUUUU]
+      
+unused devices: <none>
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# mdadm -D /dev/md0
+/dev/md0:
+           Version : 1.2
+     Creation Time : Tue Jul 30 08:22:03 2024
+        Raid Level : raid6
+        Array Size : 50279424 (47.95 GiB 51.49 GB)
+     Used Dev Size : 16759808 (15.98 GiB 17.16 GB)
+      Raid Devices : 5
+     Total Devices : 5
+       Persistence : Superblock is persistent
+
+       Update Time : Tue Jul 30 08:28:51 2024
+             State : clean 
+    Active Devices : 5
+   Working Devices : 5
+    Failed Devices : 0
+     Spare Devices : 0
+
+            Layout : left-symmetric
+        Chunk Size : 512K
+
+Consistency Policy : resync
+
+              Name : ubuntu:0  (local to host ubuntu)
+              UUID : 5a6a37de:83186ac6:579cf97b:3fd15430
+            Events : 39
+
+    Number   Major   Minor   RaidDevice State
+       0       8       16        0      active sync   /dev/sdb
+       1       8       32        1      active sync   /dev/sdc
+       2       8       48        2      active sync   /dev/sdd
+       5       8       64        3      active sync   /dev/sde
+       4       8       80        4      active sync   /dev/sdf
+]0;root@ubuntu: /root@ubuntu:/# 
+[K]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# parted -s /dev/md0 mklabel gpt
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# parted /dev/md0 mkpart primary ext4 0% 20%
+Information: You may need to update /etc/fstab.
+                                                                          
+]0;root@ubuntu: /root@ubuntu:/# parted /dev/md0 mkpart primary ext4 20% 40%
+Information: You may need to update /etc/fstab.
+                                                                          
+]0;root@ubuntu: /root@ubuntu:/# parted /dev/md0 mkpart primary ext4 40% 60%
+Information: You may need to update /etc/fstab.
+                                                                          
+]0;root@ubuntu: /root@ubuntu:/# parted /dev/md0 mkpart primary ext4 60% 80%
+Information: You may need to update /etc/fstab.
+                                                                          
+]0;root@ubuntu: /root@ubuntu:/# parted /dev/md0 mkpart primary ext4 80% 100%
+Information: You may need to update /etc/fstab.
+                                                                          
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# for i in $(seq 1 5); do sudo mkfs.ext4 /dev/md0p$i; done
+mke2fs 1.45.5 (07-Jan-2020)
+Creating filesystem with 2513664 4k blocks and 629552 inodes
+Filesystem UUID: 1f11e38e-8be2-4b32-813c-12e56e305e8c
+Superblock backups stored on blocks: 
+	32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632
+
+Allocating group tables:  0/77     done                            
+Writing inode tables:  0/77     done                            
+Creating journal (16384 blocks): done
+Writing superblocks and filesystem accounting information:  0/77     done
+
+mke2fs 1.45.5 (07-Jan-2020)
+Creating filesystem with 2514048 4k blocks and 629552 inodes
+Filesystem UUID: 04475eaa-a710-4761-a637-cc3c558f88b4
+Superblock backups stored on blocks: 
+	32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632
+
+Allocating group tables:  0/77     done                            
+Writing inode tables:  0/77     done                            
+Creating journal (16384 blocks): done
+Writing superblocks and filesystem accounting information:  0/77     done
+
+mke2fs 1.45.5 (07-Jan-2020)
+Creating filesystem with 2513664 4k blocks and 629552 inodes
+Filesystem UUID: 3271e85a-078a-4aa2-a729-c64a91965a28
+Superblock backups stored on blocks: 
+	32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632
+
+Allocating group tables:  0/77     done                            
+Writing inode tables:  0/77     done                            
+Creating journal (16384 blocks): done
+Writing superblocks and filesystem accounting information:  0/77     done
+
+mke2fs 1.45.5 (07-Jan-2020)
+Creating filesystem with 2514048 4k blocks and 629552 inodes
+Filesystem UUID: 85df1f84-67aa-4450-8e93-8a15b3940b60
+Superblock backups stored on blocks: 
+	32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632
+
+Allocating group tables:  0/77     done                            
+Writing inode tables:  0/77     done                            
+Creating journal (16384 blocks): done
+Writing superblocks and filesystem accounting information:  0/77     done
+
+mke2fs 1.45.5 (07-Jan-2020)
+Creating filesystem with 2513664 4k blocks and 629552 inodes
+Filesystem UUID: b12b4d65-2312-40f1-84b1-3297e0247e98
+Superblock backups stored on blocks: 
+	32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632
+
+Allocating group tables:  0/77     done                            
+Writing inode tables:  0/77 1/77     done                            
+Creating journal (16384 blocks): done
+Writing superblocks and filesystem accounting information:  0/77     done
+
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# mkdir -p /raid/part{1,2,3,4,5}
+]0;root@ubuntu: /root@ubuntu:/# for i in $(seq 1 5); do mount /dev/md0p$i /raid/part$i; done
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# lsblk
+NAME      MAJ:MIN RM  SIZE RO TYPE  MOUNTPOINT
+loop0       7:0    0 70.3M  1 loop  /snap/lxd/21029
+loop1       7:1    0 32.3M  1 loop  /snap/snapd/12704
+loop2       7:2    0 55.4M  1 loop  /snap/core18/2128
+sda         8:0    0   30G  0 disk  
+├─sda1      8:1    0    1M  0 part  
+└─sda2      8:2    0   30G  0 part  /
+sdb         8:16   0   16G  0 disk  
+└─md0       9:0    0   48G  0 raid6 
+  ├─md0p1 259:1    0  9.6G  0 part  /raid/part1
+  ├─md0p2 259:4    0  9.6G  0 part  /raid/part2
+  ├─md0p3 259:5    0  9.6G  0 part  /raid/part3
+  ├─md0p4 259:8    0  9.6G  0 part  /raid/part4
+  └─md0p5 259:9    0  9.6G  0 part  /raid/part5
+sdc         8:32   0   16G  0 disk  
+└─md0       9:0    0   48G  0 raid6 
+  ├─md0p1 259:1    0  9.6G  0 part  /raid/part1
+  ├─md0p2 259:4    0  9.6G  0 part  /raid/part2
+  ├─md0p3 259:5    0  9.6G  0 part  /raid/part3
+  ├─md0p4 259:8    0  9.6G  0 part  /raid/part4
+  └─md0p5 259:9    0  9.6G  0 part  /raid/part5
+sdd         8:48   0   16G  0 disk  
+└─md0       9:0    0   48G  0 raid6 
+  ├─md0p1 259:1    0  9.6G  0 part  /raid/part1
+  ├─md0p2 259:4    0  9.6G  0 part  /raid/part2
+  ├─md0p3 259:5    0  9.6G  0 part  /raid/part3
+  ├─md0p4 259:8    0  9.6G  0 part  /raid/part4
+  └─md0p5 259:9    0  9.6G  0 part  /raid/part5
+sde         8:64   0   16G  0 disk  
+└─md0       9:0    0   48G  0 raid6 
+  ├─md0p1 259:1    0  9.6G  0 part  /raid/part1
+  ├─md0p2 259:4    0  9.6G  0 part  /raid/part2
+  ├─md0p3 259:5    0  9.6G  0 part  /raid/part3
+  ├─md0p4 259:8    0  9.6G  0 part  /raid/part4
+  └─md0p5 259:9    0  9.6G  0 part  /raid/part5
+sdf         8:80   0   16G  0 disk  
+└─md0       9:0    0   48G  0 raid6 
+  ├─md0p1 259:1    0  9.6G  0 part  /raid/part1
+  ├─md0p2 259:4    0  9.6G  0 part  /raid/part2
+  ├─md0p3 259:5    0  9.6G  0 part  /raid/part3
+  ├─md0p4 259:8    0  9.6G  0 part  /raid/part4
+  └─md0p5 259:9    0  9.6G  0 part  /raid/part5
+sr0        11:0    1 1024M  0 rom   
+]0;root@ubuntu: /root@ubuntu:/# 
+]0;root@ubuntu: /root@ubuntu:/# 
+
